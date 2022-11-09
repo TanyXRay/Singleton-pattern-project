@@ -1,4 +1,4 @@
-package utils.exception;
+package util.exception;
 
 public class NumberGreaterThenThresholdException extends Throwable {
 

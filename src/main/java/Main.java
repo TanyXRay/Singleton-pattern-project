@@ -1,6 +1,6 @@
 import filter.Filter;
 import singleton.log.Logger;
-import utils.exception.NumberGreaterThenThresholdException;
+import util.exception.NumberGreaterThenThresholdException;
 
 import java.util.*;
 
