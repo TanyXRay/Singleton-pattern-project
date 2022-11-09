@@ -2,6 +2,7 @@ package singleton.log;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Класс синглтон для класса Filter
@@ -9,7 +10,6 @@ import java.util.Calendar;
 public class Logger {
     private static final Logger instance = new Logger();
     private int num = 1;
-    private String timeStamp = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss").format(Calendar.getInstance().getTime());
 
     private Logger() {
     }
@@ -20,6 +20,7 @@ public class Logger {
      * @param msg текст действия пользователя
      */
     public void log(String msg) {
+        String timeStamp = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss:S").format(Calendar.getInstance().getTime());
         System.out.print("\n[" + timeStamp + " " + num++ + "] " + msg);
     }
 
