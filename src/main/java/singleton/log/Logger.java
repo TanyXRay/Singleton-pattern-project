@@ -2,13 +2,12 @@ package singleton.log;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 /**
  * Класс синглтон для класса Filter
  */
 public class Logger {
-    private static final Logger instance = new Logger();
+    private static Logger instance;
     private int num = 1;
 
     private Logger() {
@@ -25,6 +24,13 @@ public class Logger {
     }
 
     public static Logger getInstance() {
+        if (instance == null) {
+            synchronized (Logger.class) {
+                if (instance == null) {
+                    instance = new Logger();
+                }
+            }
+        }
         return instance;
     }
 }
