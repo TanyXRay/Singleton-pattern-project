@@ -1,4 +1,4 @@
-package singleton_log;
+package singleton.log;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

@@ -1,6 +1,6 @@
 package filter;
 
-import singleton_log.Logger;
+import singleton.log.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,9 @@ public class Filter {
             if (integer > threshold) {
                 resultList.add(integer);
                 log.log("Элемент " + integer + " проходит");
-            } else log.log("Элемент " + integer + " не проходит");
+            } else {
+                log.log("Элемент " + integer + " не проходит");
+            }
         }
         return resultList;
     }

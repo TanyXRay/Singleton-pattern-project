@@ -1,12 +1,11 @@
 import filter.Filter;
-import singleton_log.Logger;
-import utils.NumberGreaterThenThresholdException;
+import singleton.log.Logger;
+import utils.exception.NumberGreaterThenThresholdException;
 
 import java.util.*;
 
 public class Main {
     private static Random random = new Random();
-    private static Filter filter;
     private static Scanner scanner = new Scanner(System.in);
     private static Logger logger = Logger.getInstance();
 
@@ -52,7 +51,7 @@ public class Main {
             rawList.forEach(i -> System.out.print(i + " "));
 
             logger.log("Запускаем фильтрацию...");
-            filter = new Filter(numberForFilter);
+            Filter filter = new Filter(numberForFilter);
             List<Integer> resultList = filter.filterOut(rawList);
 
             logger.log("Прошло фильтр: " + resultList.size() + " элемента из " + valueOfList);
