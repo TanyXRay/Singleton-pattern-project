@@ -7,7 +7,7 @@ import java.util.Calendar;
  * Класс синглтон для класса Filter
  */
 public class Logger {
-    private static Logger instance;
+    private static volatile Logger instance;
     private int num = 1;
 
     private Logger() {
@@ -24,13 +24,11 @@ public class Logger {
     }
 
     public static Logger getInstance() {
-        if (instance == null) {
             synchronized (Logger.class) {
                 if (instance == null) {
                     instance = new Logger();
                 }
             }
-        }
         return instance;
     }
 }
