@@ -67,7 +67,7 @@ public class Program {
         logger.log("Прошло фильтр: " + resultList.size() + " элемента из " + valueOfList);
         logger.log("Выводим результат на экран: ");
         System.out.print("\nОтфильтрованный список: ");
-        rawList.forEach(i -> System.out.print(i + " "));
+        resultList.forEach(i -> System.out.print(i + " "));
     }
 
     private List<Integer> fillingList(int valueOfList, int threshold) {

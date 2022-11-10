@@ -14,20 +14,21 @@ public class Filter {
 
     /**
      * Метод производит фильтрацию списка с логированием действий
+     *
      * @param source список с рандомными числами
      * @return список отфильтрованный по критерию
      */
     public List<Integer> filterOut(List<Integer> source) {
         Logger log = Logger.getInstance();
         List<Integer> resultList = new ArrayList<>();
-        for (Integer integer : source) {
-            if (integer > threshold) {
-                resultList.add(integer);
-                log.log("Элемент " + integer + " проходит");
-            } else {
-                log.log("Элемент " + integer + " не проходит");
-            }
-        }
+        source.stream()
+                .distinct()
+                .forEach(i -> {
+                    if (i > threshold) {
+                        resultList.add(i);
+                        log.log("Элемент " + i + " проходит");
+                    } else log.log("Элемент " + i + " не проходит");
+                });
         return resultList;
     }
 }
